@@ -16,6 +16,11 @@ void test() {
     assert(2 == s.pop());
     assert(1 == s.pop());
     assert(s.empty());
+
+    stack<int> t(2);
+    t.push(1);
+    t.push(2);
+    assert(t.full());
 }
 
 int main() {
