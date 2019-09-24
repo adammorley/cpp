@@ -10,6 +10,8 @@ class stack {
         T pop();
         bool full() const { return (_top == _size); }
         bool empty() const { return (_top == 0); }
+        int size() const { return _size; }
+        int count() const { return _top; }
     private:
         int _top;
         int _size;
