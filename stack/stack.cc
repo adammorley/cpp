@@ -17,7 +17,7 @@ stack<T>::push(T value) {
 template <class T>
 stack<T>::stack(int sz) {
     this->_size = sz;
-    _top = 0;
-    _stack = new (std::nothrow) T[_size];
-    assert(_stack != NULL);
+    this->_top = 0;
+    this->_stack = new (std::nothrow) T[this->_size];
+    assert(this->_stack != NULL);
 }
