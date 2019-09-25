@@ -25,5 +25,5 @@ queue<T>::queue(int sz) {
     this->_front = 0;
     this->_back = 0;
     this->_queue = new (std::nothrow) T[this->_size];
-    assert(this->_queue != NULL);
+    assert(this->_queue != nullptr);
 }
