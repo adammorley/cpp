@@ -19,5 +19,5 @@ stack<T>::stack(int sz) {
     this->_size = sz;
     this->_top = 0;
     this->_stack = new (std::nothrow) T[this->_size];
-    assert(this->_stack != NULL);
+    assert(this->_stack != nullptr);
 }
