@@ -1,3 +1,5 @@
+#include <new>
+
 template <class T>
 linkedList<T>::linkedList(T value) {
     this->_size = 1;
