@@ -20,8 +20,8 @@ class node {
 template <class T>
 node<T>::node(T value) {
     this->_value = value;
-    this->_next = NULL;
-    this->_prev = NULL;
+    this->_next = nullptr;
+    this->_prev = nullptr;
 }
 
 #endif //NODE_H
