@@ -4,20 +4,20 @@
 template <class T>
 T stack<T>::pop() {
     assert(!this->empty());
-    return this->_stack[--_top];
+    return this->stack_[--top_];
 }
 
 template <class T>
 void
 stack<T>::push(T value) {
     assert(!this->full());
-    this->_stack[_top++] = value;
+    this->stack_[top_++] = value;
 }
 
 template <class T>
 stack<T>::stack(int sz) {
-    this->_size = sz;
-    this->_top = 0;
-    this->_stack = new (std::nothrow) T[this->_size];
-    assert(this->_stack != nullptr);
+    this->size_ = sz;
+    this->top_ = 0;
+    this->stack_ = new (std::nothrow) T[this->size_];
+    assert(this->stack_ != nullptr);
 }

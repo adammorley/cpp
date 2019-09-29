@@ -5,17 +5,17 @@ template <class T>
 class stack {
     public:
         stack(int sz);
-        ~stack() { delete[] _stack; };
+        ~stack() { delete[] stack_; };
         void push(T value);
         T pop();
-        bool full() const { return (_top == _size); }
-        bool empty() const { return (_top == 0); }
-        int size() const { return _size; }
-        int count() const { return _top; }
+        bool full() const { return (top_ == size_); }
+        bool empty() const { return (top_ == 0); }
+        int size() const { return size_; }
+        int count() const { return top_; }
     private:
-        int _top;
-        int _size;
-        T* _stack;
+        int top_;
+        int size_;
+        T* stack_;
 };
 
 #include "stack.cc"
