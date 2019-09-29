@@ -4,11 +4,11 @@
 template <class T>
 T queue<T>::dequeue() {
     assert(!this->empty());
-    T ret = this->_queue[_front];
-    for (int i = this->_front + 1; i <= this->_back; i++) {
-        this->_queue[i-1] = this->_queue[i];
+    T ret = this->queue_[front_];
+    for (int i = this->front_ + 1; i <= this->back_; i++) {
+        this->queue_[i-1] = this->queue_[i];
     }
-    this->_back = this->_back - 1;
+    this->back_ = this->back_ - 1;
     return ret;
 }
 
@@ -16,14 +16,14 @@ template <class T>
 void
 queue<T>::enqueue(T value) {
     assert(!this->full());
-    this->_queue[_back++] = value;
+    this->queue_[back_++] = value;
 }
 
 template <class T>
 queue<T>::queue(int sz) {
-    this->_size = sz;
-    this->_front = 0;
-    this->_back = 0;
-    this->_queue = new (std::nothrow) T[this->_size];
-    assert(this->_queue != nullptr);
+    this->size_ = sz;
+    this->front_ = 0;
+    this->back_ = 0;
+    this->queue_ = new (std::nothrow) T[this->size_];
+    assert(this->queue_ != nullptr);
 }

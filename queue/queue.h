@@ -5,18 +5,18 @@ template <class T>
 class queue {
     public:
         queue(int sz);
-        ~queue() { delete[] _queue; };
+        ~queue() { delete[] queue_; };
         void enqueue(T value);
         T dequeue();
-        bool full() const { return (_back == _size); }
-        bool empty() const { return (_front == _back); }
-        int size() const { return _size; }
-        int count() const { return _back; }
+        bool full() const { return (back_ == size_); }
+        bool empty() const { return (front_ == back_); }
+        int size() const { return size_; }
+        int count() const { return back_; }
     private:
-        int _front;
-        int _back;
-        int _size;
-        T* _queue;
+        int front_;
+        int back_;
+        int size_;
+        T* queue_;
 };
 
 #include "queue.cc"
