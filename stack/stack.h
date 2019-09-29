@@ -6,8 +6,8 @@ class stack {
     public:
         stack(int sz);
         ~stack() { delete[] stack_; };
-        void push(T value);
-        T pop();
+        void Push(T value);
+        T Pop();
         bool full() const { return (top_ == size_); }
         bool empty() const { return (top_ == 0); }
         int size() const { return size_; }

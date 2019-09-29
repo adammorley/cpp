@@ -8,8 +8,8 @@ class linkedList {
     public:
         linkedList(T value);
         ~linkedList();
-        void add(T value);
-        unsigned int del(T value);
+        void Add(T value);
+        unsigned int Delete(T value);
         unsigned int size() const { return size_; }
     private:
         node<T>* head_;

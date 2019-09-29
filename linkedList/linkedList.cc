@@ -20,7 +20,7 @@ linkedList<T>::~linkedList() {
 
 template <class T>
 void
-linkedList<T>::add(T value) {
+linkedList<T>::Add(T value) {
     node<T>* cur = this->head_;
     while (cur->next() != nullptr) {
         cur = cur->next();
@@ -31,7 +31,7 @@ linkedList<T>::add(T value) {
 }
 
 template <class T>
-unsigned int linkedList<T>::del(T value) {
+unsigned int linkedList<T>::Delete(T value) {
     unsigned int size = this->size();
     node<T>* cur = this->head_;
     while (cur->next() != nullptr) {

@@ -2,14 +2,14 @@
 #include <new>
 
 template <class T>
-T stack<T>::pop() {
+T stack<T>::Pop() {
     assert(!this->empty());
     return this->stack_[--top_];
 }
 
 template <class T>
 void
-stack<T>::push(T value) {
+stack<T>::Push(T value) {
     assert(!this->full());
     this->stack_[top_++] = value;
 }

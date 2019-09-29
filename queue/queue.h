@@ -6,8 +6,8 @@ class queue {
     public:
         queue(int sz);
         ~queue() { delete[] queue_; };
-        void enqueue(T value);
-        T dequeue();
+        void Enqueue(T value);
+        T Dequeue();
         bool full() const { return (back_ == size_); }
         bool empty() const { return (front_ == back_); }
         int size() const { return size_; }

@@ -7,9 +7,9 @@
 
 void test() {
     linkedList<int> ll(1);
-    ll.add(2);
-    ll.add(1);
-    assert(1 == ll.del(1));
+    ll.Add(2);
+    ll.Add(1);
+    assert(1 == ll.Delete(1));
 
     const unsigned short l = 8;
     unsigned char* blah = (unsigned char*) malloc(sizeof(unsigned char)*l);

@@ -2,7 +2,7 @@
 #include <new>
 
 template <class T>
-T queue<T>::dequeue() {
+T queue<T>::Dequeue() {
     assert(!this->empty());
     T ret = this->queue_[front_];
     for (int i = this->front_ + 1; i <= this->back_; i++) {
@@ -14,7 +14,7 @@ T queue<T>::dequeue() {
 
 template <class T>
 void
-queue<T>::enqueue(T value) {
+queue<T>::Enqueue(T value) {
     assert(!this->full());
     this->queue_[back_++] = value;
 }
