@@ -10,10 +10,10 @@ class linkedList {
         ~linkedList();
         void add(T value);
         unsigned int del(T value);
-        unsigned int size() const { return _size; }
+        unsigned int size() const { return size_; }
     private:
-        node<T>* _head;
-        unsigned int _size;
+        node<T>* head_;
+        unsigned int size_;
 };
 
 #include "linkedList.cc"

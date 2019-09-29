@@ -6,22 +6,22 @@ class node {
     public:
         node(T value);
         ~node() { }
-        node* next() { return this->_next; }
-        node* prev() { return this->_prev; }
-        T value() { return this->_value; }
-        void setNext(node* toSet) { this->_next = toSet; }
-        void setPrev(node* toSet) { this->_prev = toSet; }
+        node* next() { return this->next_; }
+        node* prev() { return this->prev_; }
+        T value() { return this->value_; }
+        void setNext(node* toSet) { this->next_ = toSet; }
+        void setPrev(node* toSet) { this->prev_ = toSet; }
     private:
-        T _value;
-        node* _next;
-        node* _prev;
+        T value_;
+        node* next_;
+        node* prev_;
 };
 
 template <class T>
 node<T>::node(T value) {
-    this->_value = value;
-    this->_next = nullptr;
-    this->_prev = nullptr;
+    this->value_ = value;
+    this->next_ = nullptr;
+    this->prev_ = nullptr;
 }
 
 #endif //NODE_H

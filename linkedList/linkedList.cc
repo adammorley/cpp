@@ -2,14 +2,14 @@
 
 template <class T>
 linkedList<T>::linkedList(T value) {
-    this->_size = 1;
-    this->_head = new (std::nothrow) node<T>(value);
-    assert(this->_head != nullptr);
+    this->size_ = 1;
+    this->head_ = new (std::nothrow) node<T>(value);
+    assert(this->head_ != nullptr);
 }
 
 template <class T>
 linkedList<T>::~linkedList() {
-    node<T>* cur = this->_head;
+    node<T>* cur = this->head_;
     node<T>* n;
     while (cur != nullptr) {
         n = cur->next();
@@ -21,23 +21,23 @@ linkedList<T>::~linkedList() {
 template <class T>
 void
 linkedList<T>::add(T value) {
-    node<T>* cur = this->_head;
+    node<T>* cur = this->head_;
     while (cur->next() != nullptr) {
         cur = cur->next();
     }
     cur->setNext(new (std::nothrow) node<T>(value));
     assert(cur->next() != nullptr);
-    this->_size++;
+    this->size_++;
 }
 
 template <class T>
 unsigned int linkedList<T>::del(T value) {
     unsigned int size = this->size();
-    node<T>* cur = this->_head;
+    node<T>* cur = this->head_;
     while (cur->next() != nullptr) {
         if (cur->value() == value) {
             if (cur->prev() == nullptr) { // head
-                this->_head = cur->next();
+                this->head_ = cur->next();
             } else if (cur->next() == nullptr) { // tail
                 cur->prev()->setNext(nullptr);
             } else { // middle
@@ -46,7 +46,7 @@ unsigned int linkedList<T>::del(T value) {
                 cur->next()->setPrev(t);
             }
             delete cur;
-            this->_size--;
+            this->size_--;
         }
         cur = cur->next();
     }
