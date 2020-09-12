@@ -1,3 +1,4 @@
+#include <iostream>
 #include <new>
 
 template <class T>
@@ -52,4 +53,13 @@ unsigned int linkedList<T>::Delete(T value) {
         cur = cur->next();
     }
     return size - this->size();
+}
+
+template <class T>
+void linkedList<T>::Print() {
+    node<T>* cur = this->head_;
+    while (cur != nullptr) {
+        std::cout << cur->value() << std::endl;
+        cur = cur->next();
+    }
 }

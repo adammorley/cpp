@@ -29,7 +29,16 @@ void test2() {
     assert(5 == ll.size());
 }
 
+void testPrint() {
+    linkedList<int> ll(1);
+    ll.Add(2);
+    ll.Add(1);
+    ll.Add(3);
+    ll.Print();
+}
+
 int main() {
     test();
     test2();
+    testPrint();
 }

@@ -10,6 +10,7 @@ class linkedList {
   ~linkedList();
   void Add(T value);
   unsigned int Delete(T value);
+  void Print();
   unsigned int size() const { return size_; }
 private:
   node<T>* head_;
