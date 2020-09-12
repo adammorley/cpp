@@ -5,6 +5,7 @@ linkedList<T>::linkedList(T value) {
     this->size_ = 1;
     this->head_ = new (std::nothrow) node<T>(value);
     assert(this->head_ != nullptr);
+    this->tail_ = this->head_;
 }
 
 template <class T>
@@ -21,15 +22,14 @@ linkedList<T>::~linkedList() {
 template <class T>
 void
 linkedList<T>::Add(T value) {
-    node<T>* cur = this->head_;
-    while (cur->next() != nullptr) {
-        cur = cur->next();
-    }
+    node<T>* cur = this->tail_;
     cur->setNext(new (std::nothrow) node<T>(value));
     assert(cur->next() != nullptr);
+    this->tail_ = cur->next();
     this->size_++;
 }
 
+// returns the number of elements deleted
 template <class T>
 unsigned int linkedList<T>::Delete(T value) {
     unsigned int size = this->size();
@@ -40,6 +40,7 @@ unsigned int linkedList<T>::Delete(T value) {
                 this->head_ = cur->next();
             } else if (cur->next() == nullptr) { // tail
                 cur->prev()->setNext(nullptr);
+                this->tail_ = cur->prev();
             } else { // middle
                 node<T>* t = cur->prev();
                 cur->prev()->setNext(cur->next());

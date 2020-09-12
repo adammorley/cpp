@@ -18,6 +18,18 @@ void test() {
     linkedList<unsigned char*> lll(blah);
 }
 
+void test2() {
+    linkedList<int> ll(1);
+    ll.Add(2);
+    ll.Add(1);
+    ll.Add(3);
+    assert(1 == ll.Delete(2));
+    ll.Add(4);
+    ll.Add(5);
+    assert(5 == ll.size());
+}
+
 int main() {
     test();
+    test2();
 }

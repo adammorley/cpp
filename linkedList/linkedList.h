@@ -13,6 +13,7 @@ class linkedList {
   unsigned int size() const { return size_; }
 private:
   node<T>* head_;
+  node<T>* tail_;
   unsigned int size_;
 };
 
