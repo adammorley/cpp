@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <new>
 
 template <class T>
 sort<T>::sort(T* values, unsigned int len) {
@@ -38,16 +39,16 @@ T* sort<T>::merge(T* ptr0, T* ptr1, unsigned int ptr0L, unsigned int ptr1L) {
     assert(ret != nullptr);
     int i = 0, j = 0, k = 0;
     for (i=0; i<size; i++) {
-        if (j >= ptr0L) {
+        if (j >= ptr0L) { // reached end of first array, just keep pulling from second
             ret[i] = ptr1[k];
             k++;
-        } else if (k >= ptr1L) {
+        } else if (k >= ptr1L) { // "" first
             ret[i] = ptr0[j];
             j++;
-        } else if (ptr0[j] < ptr1[k]) {
+        } else if (ptr0[j] <= ptr1[k]) { // first lower
             ret[i] = ptr0[j];
             j++;
-        } else if (ptr0[j] > ptr1[k]) {
+        } else if (ptr0[j] > ptr1[k]) { // second lower
             ret[i] = ptr1[k];
             k++;
         } else assert(false);
